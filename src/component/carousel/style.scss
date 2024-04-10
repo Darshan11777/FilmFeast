@@ -1,0 +1,24 @@
+.carousel{
+    overflow: hidden;
+    width: 100%;
+    padding: 0 50px 0 0;
+    
+    .carouselItem{
+        max-width: 100%;
+        transform: translateX(-100%);
+      background: red;
+      display: flex;
+      gap: 5px;
+
+      grid-auto-flow: column;
+        .card{
+          min-width:calc( 33% - 5px);
+          display: flex;
+          flex-wrap: wrap;
+          max-width:calc( 33% - 5px);
+          height: 50px;
+          background-color: chartreuse;
+        }
+    }
+
+}
