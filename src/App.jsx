@@ -8,6 +8,7 @@ import { setUrl, addGeneras} from './Redux/slices/Slice'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/home/Home'
+import Header from './component/header/Header'
 
 
  
@@ -30,7 +31,8 @@ function App() {
 
   const fetchApiConfig = () => {
       fetchDataFromApi("/configuration").then((res) => {
-          // console.log(res);
+          console.log(res.images);
+          console.table(res);
 
           const url = {
               backdrop: res.images.secure_base_url + "original",
@@ -47,6 +49,7 @@ function App() {
 
 
     <BrowserRouter>
+    <Header/>
     <Routes>
       <Route path="/" element={<Home />} />
      

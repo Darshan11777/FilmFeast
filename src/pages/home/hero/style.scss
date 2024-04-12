@@ -1,0 +1,79 @@
+// .slider{
+//     height: 100vh;
+//     width: 100%;
+//     background: white;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+// .crousal{
+//     max-width: 1150px;
+//     // width: 100%;
+//     background: wheat;
+//     height: 50vh;
+//     width: 90%;
+//     color: black;
+//     display: grid;
+//     grid-auto-flow: column;
+//     grid-gap: 12px;
+//     grid-auto-columns: calc((100%/4) - 9px);
+//     overflow: hidden;
+//     scrollbar-width: none;
+//     scroll-snap-type: x mandatory;
+//     // padding: 0 0px;
+//     @media (max-width:800px) {
+//         grid-auto-columns: calc((100%/3) - 8px);
+        
+//     }
+//     @media (max-width:400px) {
+//         // padding: 0 5px;
+//         grid-auto-columns: calc((100%/1));
+        
+//     }
+//     .card{
+//         background: blue;
+//         height: 50%;
+//         scroll-snap-align: start;
+//     }
+// }
+// .carousel{
+//     display: grid;
+//     grid-auto-flow: column;
+//     grid-gap: 12px;
+//     // create 4 colem gap=12 * 3(space)=36   9*4=36(-colume width)
+//     grid-auto-columns: calc((100%/4) - 9px);
+//     overflow: hidden;
+
+//     scrollbar-width: none;
+//     // for child scrool snap effect
+//     scroll-snap-type: x mandatory;
+//     // padding: 0 0px;
+//     @media (max-width:800px) {
+
+//         grid-auto-columns: calc((100%/3) - 8px);
+        
+//     }
+//     @media (max-width:400px) {
+//         // padding: 0 5px;
+//         grid-auto-columns: calc((100%/1));
+        
+//     }
+//     .card{
+//         background: blue;
+//         height: 50%;
+//         // set scroll value to start
+//         scroll-snap-align: start;
+//     }
+// }
+// .green{
+
+//     background: green !important; 
+// }
+// .b{
+
+//     background: rgb(215, 243, 36) !important; 
+// }
+// button{
+//     padding: 5px 10px;
+//     background: skyblue;
+// }

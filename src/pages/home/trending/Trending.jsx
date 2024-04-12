@@ -6,23 +6,29 @@ import "./style.scss";
 import React from "react";
 
 export default function Trending() {
+const [endPoint, setendPoint] = React.useState("day");
+
+const {data,loading}=useFetch(`/trending/movie/${endPoint}`)
+console.log( data,loading);
+
   const onTabChange = (name, i) => {
     console.log(name, i);
+    setendPoint(name)
   };
   
- let{data} =useFetch("/trending/movie/day")
+//  let{data} =useFetch("/trending/movie/day")
   return (
     <div className="trending">
       <ContentWrapper>
         <div className="title">
           <div className="titleName">Trending</div>
 
-          <SwitchTabs data={["tv", "movies"]} onTabChange={onTabChange} />
+          <SwitchTabs data={["day", "week"]} onTabChange={onTabChange} />
         </div>
       </ContentWrapper>
 
+      <Carousel data={data?.results} loading={loading} endpoint={`/trending/movie/${endPoint}`}/>
       <ContentWrapper>
-      <Carousel data={data?.results}/>
       </ContentWrapper>
     </div>
   );
