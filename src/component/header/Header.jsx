@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [scrollY, setscrollY] = React.useState("");
@@ -45,10 +46,10 @@ React.useEffect(() => {
       if (window.scrollY > scrollY) {
         setnavClass("hide");
       } else {
-        setnavClass("top");
+        setnavClass("show");
       }
     } else {
-      setnavClass("show");
+      setnavClass("top");
     }
   };
   return (
@@ -59,9 +60,9 @@ React.useEffect(() => {
             <div className="nav-container">
               <a href="#" className="brand w-nav-brand"></a>
               <nav className="nav-menu w-nav-menu">
-                <a href="#" className="nav-link w-nav-link">
+                <Link to={"/"} className="nav-link w-nav-link">
                   Home
-                </a>
+                </Link>
                 <a href="#" className="nav-link w-nav-link">
                   About
                 </a>

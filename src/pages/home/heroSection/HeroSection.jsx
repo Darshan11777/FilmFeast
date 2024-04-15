@@ -136,19 +136,23 @@ let baseImgUrl=useSelector(state=>state.pages.url.backdrop)
                  alt="" className="image" />
                  <div className="w-layout-blockcontainer container-4 w-container">
                      <h1 className="heading">FILM FEAST</h1>
-                     <div className="text-block"><strong className="bold-text">Millions of movies, TV shows and people to discover. Explore now.</strong>block.</div>
+                     <div className="text-block">
+                        <strong className="bold-text">
+                            Millions of movies, TV shows and people to discover. Explore now.
+                            </strong>block.
+                        </div>
                      <div className="w-form">
                          <form id="email-form"  onSubmit={searchQueryHandler}name="email-form"
-                          data-name="Email Form"
-                          method="get" 
+                        //   data-name="Email Form"
+                        //   method="get" 
                           className="form"
-                           data-wf-page-id="66164794f0f0aa4c1ec5e759" 
-                           data-wf-element-id="6b9b6183-d4e8-d005-4e4b-6709c3b2b2e9"
+                        //    data-wf-page-id="66164794f0f0aa4c1ec5e759" 
+                        //    data-wf-element-id="6b9b6183-d4e8-d005-4e4b-6709c3b2b2e9"
                            >
                              <input className="text-field w-input"
                               maxLength="256" 
                               name="search"
-                               data-name="search" 
+                            //    data-name="search" 
                                placeholder="Search for a movie or tv show...." 
                                type="text" 
                                id="search"
@@ -156,7 +160,10 @@ let baseImgUrl=useSelector(state=>state.pages.url.backdrop)
                             onKeyUp={searchQueryHandler}                           
                              value={query}
                                />
-                             <input type="submit" data-wait="Please wait..." className="submit-button w-button" value="Submit" />
+                             <input type="submit"
+                            //   data-wait="Please wait..."
+                               className="submit-button w-button" 
+                               value="Submit" />
      
                          </form>
                          {/* <div className="w-form-done">

@@ -5,13 +5,14 @@ import {
 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-// import dayjs from "dayjs";
+import dayjs from "dayjs";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 // import Img from "../lazyLoadImage/Img";
 import PosterFallback from "../../assets/test kung img.jpg";
-// import CircleRating from "../circleRating/CircleRating";
+import CircleRating from "../circleRating/CircleRating";
 // import Genres from "../genres/Genres";
+import Genres from "../genres/Genres" 
 
 import "./style.scss";
 import Image from "../lazyLoadImage/LazyLoadImg";
@@ -34,7 +35,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
       behavior: "smooth",
     });
   };
-console.log( loading);
+
   const skItem = () => {
     return (
       <div className="skeletonItem">
@@ -61,10 +62,11 @@ console.log( loading);
           className="carouselRighttNav arrow"
           onClick={() => navigation("right")}
         />
-        {!loading === false ? (
+        {!loading  ? (
           <div className="carouselItems" ref={carouselContainer}>
             {data?.map((item) => {
-              const posterUrl = item.poster_path
+                    
+               const posterUrl = item.poster_path
                 ? url.poster + item.poster_path
                 : PosterFallback;
               return (
@@ -79,21 +81,21 @@ console.log( loading);
                     {/* <img src={posterUrl} />
                      */}
                     <Image src={posterUrl } />
-                    {/* <CircleRating
+                    <CircleRating
                                             rating={item.vote_average.toFixed(
                                                 1
                                             )}
-                                        /> */}
-                    {/* <Genres
+                                        />
+                    <Genres
                                             data={item.genre_ids.slice(0, 2)}
-                                        /> */}
+                                        />
                   </div>
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>
                     <span className="date">
-                      {/* {dayjs(item.release_date || item.first_air_date).format(
+                      {dayjs(item.release_date || item.first_air_date).format(
                                                 "MMM D, YYYY"
-                                            )} */}
+                                            )}
                     </span>
                   </div>
                 </div>

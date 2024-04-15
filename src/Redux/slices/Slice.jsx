@@ -7,15 +7,15 @@ import {
 const pages = createSlice({
   name: "count",
   initialState: { url: {}
-  , generas: {}
+  , genres: {}
  },
   reducers: {
     setUrl: (state, action) => {
       state.url = action.payload;
     },
-    addGeneras: (state, action) => {
+    getGenres: (state, action) => {
       
-      state.generas = action.payload;
+      state.genres = action.payload;
     },
 
    
@@ -25,10 +25,10 @@ const pages = createSlice({
 // for store
 export default pages.reducer;
 
-// for dispacth
-export const { setUrl, addGeneras } = pages.actions;
+// for dispatch
+export const { setUrl,getGenres } = pages.actions;
 
-// for export sfecific data from store
+// for export specific data from store
 export let sele = createSelector(
   (state) => state.count.ApiData,
   (state) => state
