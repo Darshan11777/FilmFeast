@@ -33,17 +33,32 @@
     hsl(20deg 100% 50%) 90%,
     hsl(0deg 100% 50%) 100%
       );;
-      --main-g:linear-gradient(
-        90deg,
-        hsl(0, 0%, 2%) 0%,
-        hsl(344deg 0% 16%) 14%,
-        hsl(0, 1%, 13%) 29%,
-        hsl(344deg 0% 21%) 43%,
-        hsl(0, 1%, 29%) 57%,
-        hsl(344deg 0% 36%) 71%,
-        hsl(344deg 0% 18%) 86%,
-        hsl(0deg 0% 0%) 100%
-      );
+      --main-g: linear-gradient(to right, #434343 0%, black 100%);
+    //   2ns custom
+    //   --main-g:linear-gradient(
+    //     90deg,
+    //     hsl(0, 0%, 2%) 0%,
+    //     hsl(344deg 0% 16%) 14%,
+    //     hsl(0, 1%, 13%) 29%,
+    //     hsl(344deg 0% 21%) 43%,
+    //     hsl(0, 0%, 8%) 57%,
+    //     hsl(0, 0%, 22%) 71%,
+    //     hsl(344deg 0% 18%) 86%,
+    //     hsl(0deg 0% 0%) 100%
+    //   );
+
+    //   1st
+    //   --main-g:linear-gradient(
+    //     90deg,
+    //     hsl(0, 0%, 2%) 0%,
+    //     hsl(344deg 0% 16%) 14%,
+    //     hsl(0, 1%, 13%) 29%,
+    //     hsl(344deg 0% 21%) 43%,
+    //     hsl(0, 1%, 29%) 57%,
+    //     hsl(344deg 0% 36%) 71%,
+    //     hsl(344deg 0% 18%) 86%,
+    //     hsl(0deg 0% 0%) 100%
+    //   );
 }
 
 * {

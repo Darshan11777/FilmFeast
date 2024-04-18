@@ -12,7 +12,7 @@ const navigate= useNavigate()
     const [bg, setbg] = React.useState(null);
     const [query, setQuery] = React.useState("");
     
-    // const [loading, setloading] = React.useState("");
+
     
 const {data,loading}=useFetch(`/movie/upcoming`)
 useEffect(() => {
@@ -20,9 +20,7 @@ useEffect(() => {
 let randomNumber = Math.floor(Math.random() * ( 20 + 1));
 const imgSrc= data?.results?.[randomNumber]?.backdrop_path
 setbg(imgSrc ? `${baseImgUrl}${imgSrc}` :false)
-//   return () => {
-    //     second
-    //   }
+
 }, [data])
 
 
@@ -37,16 +35,10 @@ if(e.key=== "Enter" && query.length>1){
     navigate(`/search/${query}`)
 }
 }
-// const searchQueryHandler=(e)=>{
-// console.log(e.key=== "Enter");
-// if(e.key=== "Enter" && query.length>1){
-//     useNavigate(`/search/${query}`)
-// }
-// }
+
 
 let baseImgUrl=useSelector(state=>state.pages.url.backdrop)
-// console.log( baseImgUrl);
-// https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg
+
   return (
     
        <div className="heroBanner">
@@ -55,17 +47,9 @@ let baseImgUrl=useSelector(state=>state.pages.url.backdrop)
                  <section className="section">
                     <div className="hero-img-container">
 
-                 {/* <Image src={img} sizes="100vw"  alt="" className="image"/> */}
                  
-                 <img src={bg || panda} loading="lazy" sizes="100vw" 
-                 // srcSet="images/test-kung-img-p-500.jpg 500w, images/test-kung-img-p-800.jpg 800w, images/test-kung-img-p-1080.jpg 1080w, images/test-kung-img-p-1600.jpg 1600w, images/test-kung-img-p-2000.jpg 2000w, images/test-kung-img-p-2600.jpg 2600w, images/test-kung-img-p-3200.jpg 3200w, images/test-kung-img.jpg 3840w" 
-                 alt="" className="image" />
-                 <div className="w-layout-blockcontainer blur-slide w-container">
-                 <div className="blur-slide1 "></div>
-                 <div className="blur-slide2 "></div>
-                 <div className="blur-slide3 "></div>
-
-                 </div>
+                 <img src={bg || panda} loading="lazy" sizes="100vw" alt="" className="image" />
+               
                  </div>
                  <div className="w-layout-blockcontainer container-4 w-container">
                      <h1 className="heading">FILM FEAST</h1>
@@ -76,11 +60,7 @@ let baseImgUrl=useSelector(state=>state.pages.url.backdrop)
                         </div>
                      <div className="w-form">
                          <form id="email-form"  onSubmit={searchQueryHandler} name="email-form"
-                        //   data-name="Email Form"
-                        //   method="get" 
                           className="form"
-                        //    data-wf-page-id="66164794f0f0aa4c1ec5e759" 
-                        //    data-wf-element-id="6b9b6183-d4e8-d005-4e4b-6709c3b2b2e9"
                            >
                              <input className="text-field w-input"
                               maxLength="256" 

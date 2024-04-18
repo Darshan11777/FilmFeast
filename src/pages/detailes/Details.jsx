@@ -4,6 +4,7 @@ import useFetch from '../../hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import Cast from './cast/Cast';
 import VideosSection from './videosSection/VideosSection';
+import Loading from '../../component/loading/Loading';
 
 export default function Details() {
   const{mediaType,id}=useParams()
@@ -14,13 +15,14 @@ export default function Details() {
 
   return (
     <div>{loading?(
-      <div className="skeletonItem">
-        <div className="posterBlock skeleton"></div>
-        <div className="textBlock">
-          <div className="title skeleton"></div>
-          <div className="date skeleton"></div>
-        </div>
-      </div>
+      // <div className="skeletonItem">
+      //   <div className="posterBlock skeleton"></div>
+      //   <div className="textBlock">
+      //     <div className="title skeleton"></div>
+      //     <div className="date skeleton"></div>
+      //   </div>
+      // </div>
+      <Loading/>
     ):(<>
       
       <DetailsBanner  crew={credits?.crew} video={data?.results?.[0]}/>
