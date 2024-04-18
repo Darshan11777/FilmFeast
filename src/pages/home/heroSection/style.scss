@@ -148,22 +148,158 @@ img{
     display: flex;
     position: relative;
   }
+  .hero-img-container{
+position: absolute;
+top: 0%;
+      bottom: 0%;
+      left: 0%;
+      right: 0%;
+z-index: -1;
+
+// .blur-slide {
+//   // position: relative;
+//   margin-top: -90px;
+//   min-width: 100vw;
+//   height: 100px;
+//   // background: linear-gradient(
+//   //   90deg,
+//   //   hsl(0, 0%, 2%) 0%,
+//   //   hsl(344deg 0% 16%) 14%,
+//   //   hsl(0, 1%, 13%) 29%,
+//   //   hsl(344deg 0% 21%) 43%,
+//   //   hsl(0, 1%, 29%) 57%,
+//   //   hsl(344deg 0% 36%) 71%,
+//   //   hsl(344deg 0% 18%) 86%,
+//   //   hsl(0deg 0% 0%) 100%
+//   // );
+//   // opacity: 0.3;
+//   // background-blend-mode: multiply;
+//   .blur-slide1{
+//     background-blend-mode: multiply;
+    
+   
+//     background: linear-gradient(
+//       90deg,
+//       hsl(0, 0%, 2%) 0%,
+//       hsl(344deg 0% 16%) 14%,
+//       hsl(0, 1%, 13%) 29%,
+//       hsl(344deg 0% 21%) 43%,
+//       hsl(0, 1%, 29%) 57%,
+//       hsl(344deg 0% 36%) 71%,
+//       hsl(344deg 0% 18%) 86%,
+//       hsl(0deg 0% 0%) 100%
+//     );
+//     opacity: 0.3;
+//     width: 100%;
+//     height: 33px;
+//     // z-index: 5;
+//   }
+//   .blur-slide2{
   
-  .image {
-    z-index: -1;
-    aspect-ratio: auto;
-    opacity: .5;
-    object-position: 50% 50%;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0%;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
+//     content: "";
+//     height: 33px;
+//     width: 100%;
+//     background: linear-gradient(
+//       90deg,
+//       hsl(0, 0%, 2%) 0%,
+//       hsl(344deg 0% 16%) 14%,
+//       hsl(0, 1%, 13%) 29%,
+//       hsl(344deg 0% 21%) 43%,
+//       hsl(0, 1%, 29%) 57%,
+//       hsl(344deg 0% 36%) 71%,
+//       hsl(344deg 0% 18%) 86%,
+//       hsl(0deg 0% 0%) 100%
+//     );
+//     opacity: 0.5;
+//     // z-index: 5;
+//   }
+//   .blur-slide3{
+    
+//     height: 33px;
+//     width: 100%;
+//     background: linear-gradient(
+//       90deg,
+//       hsl(0, 0%, 2%) 0%,
+//       hsl(344deg 0% 16%) 14%,
+//       hsl(0, 1%, 13%) 29%,
+//       hsl(344deg 0% 21%) 43%,
+//       hsl(0, 1%, 29%) 57%,
+//       hsl(344deg 0% 36%) 71%,
+//       hsl(344deg 0% 18%) 86%,
+//       hsl(0deg 0% 0%) 100%
+//     );
+//     opacity: 0.8;
+//     // z-index: 5;
+//   }
+// }
+
+
+// .blur-slide{
+//     // position: relative;
+//   margin-top: -90px;
+//   min-width: 100vw;
+//   height: 100px;
+//   background: red;
+//   background: linear-gradient(
+//     90deg,
+//     hsl(0, 0%, 2%) 0%,
+//     hsl(344deg 0% 16%) 14%,
+//     hsl(0, 1%, 13%) 29%,
+//     hsl(344deg 0% 21%) 43%,
+//     hsl(0, 1%, 29%) 57%,
+//     hsl(344deg 0% 36%) 71%,
+//     hsl(344deg 0% 18%) 86%,
+//     hsl(0deg 0% 0%) 100%
+//   );
+//   // opacity: 0.3;
+//   // background-blend-mode: multiply;
+// }
+.blur-slide {
+  margin-top: -190px;
+    min-width: 100vw;
+    height: 200px;
+    // background-color: #3898ec;
+  //  background:linear-gradient(
+  //       90deg,
+  //       hsl(0, 0%, 2%) 0%,
+  //       hsl(344deg 0% 16%) 14%,
+  //       hsl(0, 1%, 13%) 29%,
+  //       hsl(344deg 0% 21%) 43%,
+  //       hsl(0, 1%, 29%) 57%,
+  //       hsl(344deg 0% 36%) 71%,
+  //       hsl(344deg 0% 18%) 86%,
+  //       hsl(0deg 0% 0%) 100%
+  //     ) ;
+  //     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+   
+}
+
+    .image {
+      border: transparent;
+      z-index: -1;
+      aspect-ratio: auto;
+      opacity: .5;
+      object-position: 50% 50%;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      // position: absolute;
+      // top: 0%;
+      // bottom: 0%;
+      // left: 0%;
+      // right: 0%;
+      // mix-blend-mode: multiply;
+    //  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 2%, rgba(0, 0, 0, 1));
+     -webkit-mask-image: linear-gradient(to top, black 70% , transparent 100%);
+     mask-image: linear-gradient(to bottom, black 70% , transparent 100%);
+     
+    //  -webkit-mask-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%,
+      
+    
+      // rgba(0, 0, 0, 1)) 100%;
+    }
   }
-  
+ 
   .container-3 {
     height: 500px;
     min-height: 0%;
@@ -177,19 +313,19 @@ img{
     background-color: #000;
   }
   
-  .blur-slide {
-    background-image: linear-gradient(360deg, #000 35%, #000 0%, rgba(255, 255, 255, 0));
-    width: 100%;
-    max-width: 100%;
-    height: 150px;
-    margin-left: 0;
-    margin-right: 0;
-    position: absolute;
-    top: auto;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
-  }
+  // .blur-slide {
+  //   background-image: linear-gradient(360deg, #000 35%, #000 0%, rgba(255, 255, 255, 0));
+  //   width: 100%;
+  //   max-width: 100%;
+  //   height: 150px;
+  //   margin-left: 0;
+  //   margin-right: 0;
+  //   position: absolute;
+  //   top: auto;
+  //   bottom: 0%;
+  //   left: 0%;
+  //   right: 0%;
+  // }
   
   .container-4 {
     width: 80%;
@@ -202,12 +338,16 @@ img{
   
   .heading {
     opacity: 1;
-    color: var(--blue);
+    color: transparent;
     text-align: center;
     background-color: rgba(103, 103, 103, 0);
     margin-bottom: 22px;
     font-size: 80px;
     line-height: 1;
+    background-image:var(--gradient);
+background-clip: text;
+background-size: 100%;
+
   }
   
   .text-block {
@@ -245,17 +385,21 @@ border-radius:35px 0 0 35px ;
 }
 
 .submit-button {
-      color: white;
+      color: rgb(0, 0, 0);
       font-size: 15px;
-    background-color: var(--dradiant);
+    background-image: var(--gradient);
     border-radius: 0 35px 35px 0;
-   
+   font-weight: 700;
     width: 15%;
     height: 100%;
     border: none;
     outline: none;
+    cursor: pointer;
+    
   }
-
+  .submit-button:hover{
+    background-position-y: 100%;
+  }
 
 
 
@@ -279,6 +423,7 @@ border-radius:35px 0 0 35px ;
     }
     .w-layout-blockcontainer {
       max-width: 728px;
+    
     }
     .blur-slide{
 min-width: 100vw;
@@ -294,6 +439,7 @@ min-width: 100vw;
     .container-4 {
       width: 90%;
       height: auto;
+     
     }
   
     .heading {

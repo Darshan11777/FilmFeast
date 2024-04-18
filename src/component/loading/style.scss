@@ -1,0 +1,50 @@
+.loading-scaleton{
+    height: 100vh;
+    width: 100vw;
+    background: var(--main-g);
+    background-size: 200% 100%;
+    animation: loading-animation 2s linear infinite;
+}
+
+
+// .{
+//     height: 100%;
+//     width: 100%;
+//     background: var(--main-g);
+//     // background-size: 200% 100%;
+//     animation: loading-animation 2s linear infinite;
+// }
+// @keyframes loading-animation {
+//   0% {
+//     background-position: 0% 0%;
+//   }
+//   100% {
+//     background-position: -100%;
+//   }
+ 
+// }
+.loading-animation{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color:var(--main-g);
+    // background-color: #ff2424;
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background-image:var(--main-g);
+        animation: shimmer 2s infinite;
+        content: "";
+    }
+
+    @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+}

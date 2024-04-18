@@ -1,0 +1,27 @@
+.loading-scaleton {
+  height: 100vh;
+  width: 100vw;
+  background: var(--main-g);
+  background-size: 200% 100%;
+  animation: loading-animation 2s linear infinite;
+}
+
+.loading-animation {
+  height: 100%;
+  width: 100%;
+  background: var(--main-g);
+  background-size: 200% 100%;
+  animation: loading-animation 2s linear infinite;
+}
+
+@keyframes loading-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}/*# sourceMappingURL=style.css.map */

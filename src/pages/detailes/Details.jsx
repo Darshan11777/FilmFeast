@@ -13,10 +13,21 @@ export default function Details() {
   );
 
   return (
-    <div>
-      <DetailsBanner  crew={credits?.crew} />
+    <div>{loading?(
+      <div className="skeletonItem">
+        <div className="posterBlock skeleton"></div>
+        <div className="textBlock">
+          <div className="title skeleton"></div>
+          <div className="date skeleton"></div>
+        </div>
+      </div>
+    ):(<>
+      
+      <DetailsBanner  crew={credits?.crew} video={data?.results?.[0]}/>
       <Cast data={credits?.cast} loading={creditsLoading} />
-      <VideosSection  data={data} loading={loading}/>
+      <VideosSection  data={data} loading={loading} />
+    </>
+      )}
     </div>
   )
 }

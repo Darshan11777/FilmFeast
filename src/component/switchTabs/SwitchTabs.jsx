@@ -1,40 +1,5 @@
-// import React from 'react'
-// import   './index.scss'
-
-// export default function SwitchTabs({options}) {
-//     const [currntTag, setCurrntTag] = React.useState("");
-//     const [bg, setbg] = React.useState(0);
-    
-
-//    const selecteTag=(i)=>{
-   
-// setCurrntTag(i)
-// setTimeout(() => {
-    
-//     setbg(i*100)
-// }, 300);
-//     }
-//   return (
-//     <div className='tabs'>
-//         <div className="optionsList">
-//       {options.map((item,index)=>{
-
-// return(
-//  <span className='item' key={index} onClick={()=>selecteTag(index)}> 
-//      {item} 
-//  </span>
-// )
-// })
 
 
-//       }
-// <span className='movingBg' style={{left:bg}} >
-  
-// </span>
-//         </div>
-//     </div>
-//   )
-// }
 
 
 import React, { useState } from "react";

@@ -7,8 +7,6 @@ export default function Hero() {
 const con=React.useRef()
 let  div;
 
-// console.log( div);
-// console.log( con);
 React.useEffect(() => {
  
     // const handleScroll = () => {
@@ -27,12 +25,10 @@ React.useEffect(() => {
   }, []);
 // console.log( con.current.add);
 const [sr, setsr] = React.useState(0);
-console.log( "state",sr);
+
 function change(L) {
   div=con?.current
-console.log( "div width",div.scrollWidth);
-console.log( "scroll left",div.scrollLeft);
-console.log( "widtg",div.scrollWidth);
+
 if(sr>=(div.scrollWidth-500)){
 
   
@@ -54,7 +50,7 @@ const newV= L==="L"?(pre>=0 && pre-div.offsetWidth || 0):pre+div.offsetWidth
   })
 }
     
-  console.log( div);
+
 }
     return (
 <section className='slider'>

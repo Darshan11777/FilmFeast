@@ -9,10 +9,10 @@ export default function Trending() {
 const [endPoint, setendPoint] = React.useState("day");
 
 const {data,loading}=useFetch(`/trending/movie/${endPoint}`)
-console.log( data,loading);
+
 
   const onTabChange = (name, i) => {
-    console.log(name, i);
+
     setendPoint(name)
   };
   

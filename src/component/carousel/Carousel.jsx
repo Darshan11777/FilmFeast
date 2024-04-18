@@ -12,7 +12,7 @@ import ContentWrapper from "../contentWrapper/ContentWrapper";
 import PosterFallback from "../../assets/test kung img.jpg";
 import CircleRating from "../circleRating/CircleRating";
 // import Genres from "../genres/Genres";
-import Genres from "../genres/Genres" 
+import Genres from "../genres/Genres";
 
 import "./style.scss";
 import Image from "../lazyLoadImage/LazyLoadImg";
@@ -48,7 +48,6 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     );
   };
 
-
   return (
     <div className="carousel">
       <ContentWrapper>
@@ -57,16 +56,15 @@ const Carousel = ({ data, loading, endpoint, title }) => {
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}
         />
-        
+
         <BsFillArrowRightCircleFill
           className="carouselRighttNav arrow"
           onClick={() => navigation("right")}
         />
-        {!loading  ? (
+        {!loading ? (
           <div className="carouselItems" ref={carouselContainer}>
             {data?.map((item) => {
-                    
-               const posterUrl = item.poster_path
+              const posterUrl = item.poster_path
                 ? url.poster + item.poster_path
                 : PosterFallback;
               return (
@@ -80,22 +78,16 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                   <div className="posterBlock">
                     {/* <img src={posterUrl} />
                      */}
-                    <Image src={posterUrl } />
-                    <CircleRating
-                                            rating={item.vote_average.toFixed(
-                                                1
-                                            )}
-                                        />
-                    <Genres
-                                            data={item.genre_ids.slice(0, 2)}
-                                        />
+                    <Image src={posterUrl} />
+                    <CircleRating rating={item.vote_average.toFixed(1)} />
+                    <Genres data={item.genre_ids.slice(0, 2)} />
                   </div>
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>
                     <span className="date">
                       {dayjs(item.release_date || item.first_air_date).format(
-                                                "MMM D, YYYY"
-                                            )}
+                        "MMM D, YYYY"
+                      )}
                     </span>
                   </div>
                 </div>
@@ -115,5 +107,117 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     </div>
   );
 };
-
 export default Carousel;
+
+// import React, { useRef } from "react";
+// import {
+//   BsFillArrowLeftCircleFill,
+//   BsFillArrowRightCircleFill,
+// } from "react-icons/bs";
+// import { useNavigate } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import dayjs from "dayjs";
+
+// import ContentWrapper from "../contentWrapper/ContentWrapper";
+// // import Img from "../lazyLoadImage/Img";
+// import PosterFallback from "../../assets/test kung img.jpg";
+// import CircleRating from "../circleRating/CircleRating";
+// // import Genres from "../genres/Genres";
+// import Genres from "../genres/Genres"
+
+// import "./style.scss";
+// import Image from "../lazyLoadImage/LazyLoadImg";
+
+// const Carousel = ({ data, loading, endpoint, title }) => {
+//   const carouselContainer = useRef();
+//   const { url } = useSelector((state) => state.pages);
+//   const navigate = useNavigate();
+
+//   const navigation = (dir) => {
+//     const container = carouselContainer.current;
+
+//     const scrollAmount =
+//       dir === "left"
+//         ? container.scrollLeft - (container.offsetWidth + 20)
+//         : container.scrollLeft + (container.offsetWidth + 20);
+
+//     container.scrollTo({
+//       left: scrollAmount,
+//       behavior: "smooth",
+//     });
+//   };
+
+//  const skItem = () => {
+//     return (
+//       <div className="loading-animation">
+//         <div className="posterBlock skeleton"></div>
+//         <div className="textBlock">
+//           <div className="title skeleton"></div>
+//           <div className="date skeleton"></div>
+//         </div>
+//       </div>
+//     );
+//   };
+
+// // loading=false
+// console.log( "loading",loading);
+//   return (
+//     <div className="carousel">
+//       <ContentWrapper>
+//         {title && <div className="carouselTitle">{title}</div>}
+//         <BsFillArrowLeftCircleFill
+//           className="carouselLeftNav arrow"
+//           onClick={() => navigation("left")}
+//         />
+
+//         <BsFillArrowRightCircleFill
+//           className="carouselRighttNav arrow"
+//           onClick={() => navigation("right")}
+//         />
+//         {/* {!loading  ? ( */}
+//           <div className="carouselItems" ref={carouselContainer}>
+//             {data?.map((item) => {
+
+//                const posterUrl = item.poster_path
+//                 ? url.poster + item.poster_path
+//                 : PosterFallback;
+//               return (
+//                 <div
+//                   key={item.id}
+//                   className={`carouselItem ${loading && 'loading-animation'} `}
+//                   onClick={() =>
+//                     navigate(`/${item.media_type || endpoint}/${item.id}`)
+//                   }
+//                 >
+//                   <div className="posterBlock">
+//                     {/* <img src={posterUrl} />
+//                      */}
+//                     <Image src={posterUrl } />
+//                     <CircleRating
+//                                             rating={item.vote_average.toFixed(
+//                                                 1
+//                                             )}
+//                                         />
+//                     <Genres
+//                                             data={item.genre_ids.slice(0, 2)}
+//                                         />
+//                   </div>
+//                   <div className="textBlock">
+//                     <span className="title">{item.title || item.name}</span>
+//                     <span className="date">
+//                       {dayjs(item.release_date || item.first_air_date).format(
+//                                                 "MMM D, YYYY"
+//                                             )}
+//                     </span>
+//                   </div>
+//                 </div>
+//               );
+//             })}
+//           </div>
+
+//       </ContentWrapper>
+//     </div>
+//   );
+// };
+
+// export default Carousel;
