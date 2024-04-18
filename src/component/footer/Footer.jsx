@@ -1,3 +1,4 @@
+import { AiFillGithub } from "react-icons/ai"; 
 import React from "react";
 import {
     FaFacebookF,
@@ -30,18 +31,13 @@ const Footer = () => {
                     esse cillum dolore eu fugiat nulla pariatur.
                 </div>
                 <div className="socialIcons">
-                    <span className="icon">
-                        <FaFacebookF />
-                    </span>
-                    <span className="icon">
-                        <FaInstagram />
-                    </span>
-                    <span className="icon">
-                        <FaTwitter />
-                    </span>
-                    <span className="icon">
+                    <a className="icon" href="https://www.linkedin.com/in/darshan-kanani-1b97782bb/">
                         <FaLinkedin />
-                    </span>
+                    </a>
+                    <a className="icon" href="https://github.com/Darshan11777">
+                        <AiFillGithub />
+                    </a>
+                    
                 </div>
             </ContentWrapper>
         </footer>
