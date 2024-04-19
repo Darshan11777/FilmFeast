@@ -4,18 +4,37 @@
     // background: var(--main-g);
     background: transparent;
     position: relative;
-    &::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transform: translateX(-100%);
-        background-image:var(--main-g);
-        animation: shimmer 2s infinite;
-        content: "";
+    .header{
+      height: 50%;
+      width: 100%;
+      .contentWrapper {
+height: 100%;
+        .img{
+          height: 100%;
+          width: 40%;
+          .imgitem{
+            height: 100%;
+            // width: 50%;
+            // background-position: 100%;
+            background-image:var(--main-g);
+            animation: shimmer 2s infinite;
+          }
+          // transform: translateX(-100%);
+        }
+      }
     }
-    animation: loading-animation 2s linear infinite;
+    // &::after {
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     transform: translateX(-100%);
+    //     background-image:var(--main-g);
+    //     animation: shimmer 2s infinite;
+    //     content: "";
+    // }
+    // animation: loading-animation 2s linear infinite;
 }
 
 

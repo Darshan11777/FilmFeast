@@ -64,7 +64,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {url.backdrop ? (
+      {/* {!url.backdrop ? ( */}
         <>
           <Header />
 
@@ -79,9 +79,9 @@ function App() {
           </section>
           <Footer />
         </>
-      ) : (
+       {/* ) : (
         <Loading />
-      )}
+      )} */}
     </BrowserRouter>
   );
 }

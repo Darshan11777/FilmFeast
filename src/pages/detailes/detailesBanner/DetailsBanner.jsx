@@ -145,20 +145,7 @@ export default function DetailsBanner({ crew, video }) {
                     </div>
                   )}
 
-                  {data?.created_by?.length > 0 && (
-                    <div className="info">
-                      <span className="text bold">Creator: </span>
-                      <span className="text">
-                        {data?.created_by?.map((d, i) => (
-                          <span key={i}>
-                            {d.name}
-                            {data?.created_by.length - 1 !== i && ", "}
-                          </span>
-                        ))}
-                      </span>
-                    </div>
-                  )}
-
+                
                   {data?.created_by?.length > 0 && (
                     <div className="div-block">
                       <div className="moviesdetailes">

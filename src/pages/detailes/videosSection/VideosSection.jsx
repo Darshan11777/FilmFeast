@@ -7,6 +7,7 @@ import VideoPopup from "../../../component/videoPopup/VideoPopup";
 import Img from "../../../component/lazyLoadImage/LazyLoadImg";
 import { PlayIcon } from "../playbtn/Playbtn";
 import Image from "../../../component/lazyLoadImage/LazyLoadImg";
+import fallbackimg from "../../../assets/no-poster.png";
 
 const VideosSection = ({ data, loading }) => {
     const [show, setShow] = useState(false);
@@ -21,7 +22,13 @@ const VideosSection = ({ data, loading }) => {
             </div>
         );
     };
+    // data={results:[]}
+if(data?.results?.length<=0){
+ return(
+<div>
 
+</div>
+)}
     return (
         <div className="videosSection">
             <ContentWrapper>
@@ -38,8 +45,9 @@ const VideosSection = ({ data, loading }) => {
                                 }}
                             >
                                 <div className="videoThumbnail">
-                                    <Image
-                                        src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg`}
+                                    <img
+                                        src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg` || fallbackimg}
+
                                     />
                                     <PlayIcon />
                                 </div>
