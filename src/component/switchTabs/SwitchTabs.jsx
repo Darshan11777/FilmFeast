@@ -11,7 +11,7 @@ const SwitchTabs = ({ data, onTabChange }) => {
     setTimeout(() => {
       setSelectedTab(index);
     }, 300);
-    cv(tab, index);
+    onTabChange(tab, index);
   };
 
   return (

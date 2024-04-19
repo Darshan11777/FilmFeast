@@ -15,7 +15,7 @@ const {data,loading}=useFetch(`/trending/movie/${endPoint}`)
 
     setendPoint(name)
   };
-  
+  console.log( "endpoint",endPoint);
 //  let{data} =useFetch("/trending/movie/day")
   return (
     <div className="trending">
