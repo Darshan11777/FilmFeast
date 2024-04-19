@@ -27,6 +27,8 @@ function App() {
     genresCall();
   }, []);
 
+  // fetchApiConfig function get base url for img and set in redux store 
+
   const fetchApiConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
       const url = {
@@ -39,10 +41,13 @@ function App() {
     });
   };
 
+// genresCall function get all generas for tv and movie and set it's id as key for generas
+// and set it value to redux store
   const genresCall = async () => {
     let promises = [];
     let endPoints = ["tv", "movie"];
     let allGenres = {};
+
 
     endPoints.forEach((url) => {
       promises.push(fetchDataFromApi(`/genre/${url}/list`));

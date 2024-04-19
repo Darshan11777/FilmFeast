@@ -22,6 +22,8 @@ const Carousel = ({ data, loading, endpoint, title }) => {
   const { url } = useSelector((state) => state.pages);
   const navigate = useNavigate();
 
+  // navigation function take direction and scroll crousel 
+  
   const navigation = (dir) => {
     const container = carouselContainer.current;
 
@@ -35,7 +37,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
       behavior: "smooth",
     });
   };
-
+  // skItem is a skeleton for loading page
   const skItem = () => {
     return (
       <div className="skeletonItem">

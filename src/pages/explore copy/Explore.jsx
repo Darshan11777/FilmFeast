@@ -36,6 +36,9 @@ const Explore = () => {
 
     const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
 
+
+    //  fetchInitialData function 
+
     const fetchInitialData = () => {
         setLoading(true);
         fetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
@@ -44,7 +47,8 @@ const Explore = () => {
             setLoading(false);
         });
     };
-
+    // const fetchNextPageData function new page data from api and add it to data
+    
     const fetchNextPageData = () => {
         fetchDataFromApi(
             `/discover/${mediaType}?page=${pageNum}`,
@@ -70,6 +74,8 @@ const Explore = () => {
         setGenre(null);
         fetchInitialData();
     }, [mediaType]);
+
+    // onChange function add filter according to action and set it to filter object 
 
     const onChange = (selectedItems, action) => {
         if (action.name === "sortby") {

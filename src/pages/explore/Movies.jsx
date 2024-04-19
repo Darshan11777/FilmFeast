@@ -35,6 +35,10 @@ export default function Movies() {
   };
 console.log( "loading",loading);
 console.log( "data",data);
+
+// fetchNextPageData funtion fetch  new page data from api and add its value to data state
+// and addPageNum state count 
+
   const fetchNextPageData = () => {
     fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
       (res) => {
@@ -51,6 +55,9 @@ console.log( "data",data);
     );
   };
 
+  // every time user change query page will set new page data by fetchInitialData
+  // and reset page no to 1
+  
   useEffect(() => {
     setPageNum(1);
     fetchInitialData();

@@ -1,9 +1,6 @@
 import { AiFillGithub } from "react-icons/ai"; 
 import React from "react";
 import {
-    FaFacebookF,
-    FaInstagram,
-    FaTwitter,
     FaLinkedin,
 } from "react-icons/fa";
 
