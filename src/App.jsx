@@ -16,52 +16,55 @@ import Search from "./pages/searchResult/Search";
 
 import Explore from "./pages/explore copy/Explore";
 import Loading from "./component/loading/Loading";
-
+import PageNotFound from "./pages/404/PageNotFound";
+import useFetch from "./hooks/useFetch";
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const { url } = useSelector((state) => state.pages);
+  // const { url } = useSelector((state) => state.pages);
 
-  useEffect(() => {
-    fetchApiConfig();
-    genresCall();
-  }, []);
+  // useEffect(() => {
+  //   fetchApiConfig();
+  //   genresCall();
+  // }, []);
 
   // fetchApiConfig function get base url for img and set in redux store 
 
-  const fetchApiConfig = () => {
-    fetchDataFromApi("/configuration").then((res) => {
-      const url = {
-        backdrop: res.images.secure_base_url + "original",
-        poster: res.images.secure_base_url + "original",
-        profile: res.images.secure_base_url + "original",
-      };
+  // const fetchApiConfig = () => {
+  //   fetchDataFromApi("/configuration").then((res) => {
+  //     const url = {
+  //       backdrop: res.images.secure_base_url + "original",
+  //       poster: res.images.secure_base_url + "original",
+  //       profile: res.images.secure_base_url + "original",
+  //     };
 
-      dispatch(setUrl(url));
-    });
-  };
+  //     dispatch(setUrl(url));
+  //   });
+  // };
 
 // genresCall function get all generas for tv and movie and set it's id as key for generas
 // and set it value to redux store
-  const genresCall = async () => {
-    let promises = [];
-    let endPoints = ["tv", "movie"];
-    let allGenres = {};
+  // const genresCall = async () => {
+  //   let promises = [];
+  //   let endPoints = ["tv", "movie"];
+  //   let allGenres = {};
 
 
-    endPoints.forEach((url) => {
-      promises.push(fetchDataFromApi(`/genre/${url}/list`));
-    });
+  //   endPoints.forEach((url) => {
+  //     promises.push(fetchDataFromApi(`/genre/${url}/list`));
+  //   });
 
-    const data = await Promise.all(promises);
+  //   const data = await Promise.all(promises);
 
-    data.map(({ genres }) => {
-      return genres?.map((item) => (allGenres[item.id] = item));
-    });
+  //   data.map(({ genres }) => {
+  //     return genres?.map((item) => (allGenres[item.id] = item));
+  //   });
 
-    dispatch(getGenres(allGenres));
-  };
-
+  //   dispatch(getGenres(allGenres));
+  // };
+console.log( "fetchDataFromApi",fetchDataFromApi("",{type:"movie",s:"upcoming"}));
+const{data}=useFetch("",{type:"movie",s:"upcoming"});
+console.log( "data",data);
   return (
     <BrowserRouter>
       {/* {!url.backdrop ? ( */}
@@ -75,6 +78,7 @@ function App() {
               <Route path="/:mediaType/:id" element={<Detailes />} />
               <Route path="/search/:query" element={<Search />} />
               <Route path="/explore/:mediaType" element={<Explore />} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </section>
           <Footer />

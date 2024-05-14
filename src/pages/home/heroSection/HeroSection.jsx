@@ -11,11 +11,18 @@ export default function HeroSection() {
   const [bg, setbg] = React.useState(null);
   const [query, setQuery] = React.useState("");
 
-  const { data, loading } = useFetch(`/movie/upcoming`);
+  const { data, loading } = useFetch(``,{s:"upcoming",page:1,r:"hd"});
+
+  console.log( "data",data);
+  const newData=data?.Search?.filter(movie=>movie.Poster!=="N/A");
+  console.log( "data",newData);
   useEffect(() => {
-    let randomNumber = Math.floor(Math.random() * (20 + 1));
-    const imgSrc = data?.results?.[randomNumber]?.backdrop_path;
-    setbg(imgSrc ? `${baseImgUrl}${imgSrc}` : false);
+    let randomNumber = Math.floor(Math.random() * (6 + 1));
+    const imgSrc = newData?.[randomNumber]?.Poster;
+    console.log( "imgSrc",imgSrc);
+
+    console.log( "imgSrc22", imgSrc || imgSrc == "N/A" ? imgSrc : panda);
+    setbg(imgSrc ? imgSrc : panda);
   }, [data]);
 
   const searchQueryHandler = (e) => {
@@ -28,8 +35,7 @@ export default function HeroSection() {
       navigate(`/search/${query}`);
     }
   };
-
-  let baseImgUrl = useSelector((state) => state.pages.url.backdrop);
+// console.log( "imgsrc",imgSrc);
 
   return (
     <div className="heroBanner">
@@ -37,7 +43,7 @@ export default function HeroSection() {
         <section className="section">
           <div className="hero-img-container">
             <img
-              src={bg || panda}
+              src={bg}
               loading="lazy"
               sizes="100vw"
               alt=""
