@@ -1,86 +1,120 @@
-.loading-scaleton{
-    height: 100vh;
-    width: 100vw;
-    // background: var(--main-g);
-    background: transparent;
-    position: relative;
-    .header{
-      height: 50%;
-      width: 100%;
-      .contentWrapper {
-height: 100%;
-        .img{
-          height: 100%;
-          width: 40%;
-          .imgitem{
-            height: 100%;
-            // width: 50%;
-            // background-position: 100%;
-            background-image:var(--main-g);
-            animation: shimmer 2s infinite;
-          }
-          // transform: translateX(-100%);
-        }
-      }
-    }
-    // &::after {
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     left: 0;
-    //     transform: translateX(-100%);
-    //     background-image:var(--main-g);
-    //     animation: shimmer 2s infinite;
-    //     content: "";
-    // }
-    // animation: loading-animation 2s linear infinite;
+// .loading-scaleton{
+//     height: 100vh;
+//     width: 100vw;
+//     // background: var(--main-g);
+//     background: transparent;
+//     position: relative;
+//     .header{
+//       height: 50%;
+//       width: 100%;
+//       .contentWrapper {
+// height: 100%;
+//         .img{
+//           height: 100%;
+//           width: 40%;
+//           .imgitem{
+//             height: 100%;
+//             // width: 50%;
+//             // background-position: 100%;
+//             background-image:var(--main-g);
+//             animation: shimmer 2s infinite;
+//           }
+//           // transform: translateX(-100%);
+//         }
+//       }
+//     }
+//     // &::after {
+//     //     position: absolute;
+//     //     top: 0;
+//     //     right: 0;
+//     //     bottom: 0;
+//     //     left: 0;
+//     //     transform: translateX(-100%);
+//     //     background-image:var(--main-g);
+//     //     animation: shimmer 2s infinite;
+//     //     content: "";
+//     // }
+//     // animation: loading-animation 2s linear infinite;
+// }
+
+
+// // .{
+// //     height: 100%;
+// //     width: 100%;
+// //     background: var(--main-g);
+// //     // background-size: 200% 100%;
+// //     animation: loading-animation 2s linear infinite;
+// // }
+// @keyframes loading-animation {
+//   0% {
+//     background-position: 0% 0%;
+//   }
+//   100% {
+//     background-position: -100%;
+//   }
+ 
+// }
+// .loading-animation{
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+//     overflow: hidden;
+//     background-color:var(--main-g);
+//     // background-color: #ff2424;
+//     &::after {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         bottom: 0;
+//         left: 0;
+//         transform: translateX(-100%);
+//         background-image:var(--main-g);
+//         animation: shimmer 2s infinite;
+//         content: "";
+//     }
+
+//     // @keyframes shimmer {
+//     //     100% {
+//     //         transform: translateX(100%);
+//     //     }
+//     // }
+// }
+// @keyframes shimmer {
+//     100% {
+//         transform: translateX(100%);
+//     }
+// }
+
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 
+.loading::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  border-top-color: #333;
+  animation: spin 1s linear infinite;
+}
 
-// .{
-//     height: 100%;
-//     width: 100%;
-//     background: var(--main-g);
-//     // background-size: 200% 100%;
-//     animation: loading-animation 2s linear infinite;
-// }
-@keyframes loading-animation {
+@keyframes spin {
   0% {
-    background-position: 0% 0%;
+    transform: rotate(0deg);
   }
   100% {
-    background-position: -100%;
+    transform: rotate(360deg);
   }
- 
-}
-.loading-animation{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    background-color:var(--main-g);
-    // background-color: #ff2424;
-    &::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transform: translateX(-100%);
-        background-image:var(--main-g);
-        animation: shimmer 2s infinite;
-        content: "";
-    }
-
-    // @keyframes shimmer {
-    //     100% {
-    //         transform: translateX(100%);
-    //     }
-    // }
-}
-@keyframes shimmer {
-    100% {
-        transform: translateX(100%);
-    }
 }

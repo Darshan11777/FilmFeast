@@ -12,18 +12,19 @@ export default function Details() {
   const { data: credits, loading: creditsLoading } = useFetch(
     `/${mediaType}/${id}/credits`
   );
+  
 
   return (
     <div>
-      {/* {loading ? (
+      {loading ? (
         <Loading />
-      ) : ( */}
+      ) : (
         <>
           <DetailsBanner crew={credits?.crew} video={data?.results?.[0]} />
           <Cast data={credits?.cast} loading={creditsLoading} />
           <VideosSection data={data} loading={loading} />
         </>
-      {/* )} */}
+       )} 
     </div>
   );
 }

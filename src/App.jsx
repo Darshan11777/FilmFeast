@@ -16,29 +16,70 @@ import Search from "./pages/searchResult/Search";
 
 import Explore from "./pages/explore copy/Explore";
 import Loading from "./component/loading/Loading";
+import ErrorPage from "./component/error/ErrorPage";
+import useFetch from "./hooks/useFetch";
 
 function App() {
   const dispatch = useDispatch();
 
   const { url } = useSelector((state) => state.pages);
+const [showError, seterror] = useState(false);
+const [dataObj, setdataObj] = useState({});
+
+let {data,error,loading}=useFetch("/movie/popular")
 
   useEffect(() => {
-    fetchApiConfig();
+    fetchApiConfig()
     genresCall();
+   
+  }, []);
+  
+  
+  if(data?.message==="Network Error" && !showError){
+    
+    seterror(true)
+    console.log("network error setting error");
+  }
+ 
+
+
+  useEffect(() => {
+    const handleError = (event) => {
+      if (event.error 
+        // && event.error.message.includes('ERR_CONNECTION_TIMED_OUT')
+      ) {
+        // Handle the error here
+        console.log('API request timed out:', event.target.responseURL);
+      }
+    };
+
+    window.addEventListener('error', handleError);
+
+    return () => {
+      window.removeEventListener('error', handleError);
+    };
   }, []);
 
-  // fetchApiConfig function get base url for img and set in redux store 
 
-  const fetchApiConfig = () => {
+
+  const fetchApiConfig = async() => {
+    try{
+
+      
     fetchDataFromApi("/configuration").then((res) => {
-      const url = {
-        backdrop: res.images.secure_base_url + "original",
-        poster: res.images.secure_base_url + "original",
-        profile: res.images.secure_base_url + "original",
+      const url =  {
+        backdrop: res?.images.secure_base_url + "original",
+        poster: res?.images.secure_base_url + "original",
+        profile: res?.images.secure_base_url + "original",
       };
+      
 
       dispatch(setUrl(url));
     });
+    }catch(err){
+      console.log("data not found",err)
+      seterror(true)
+    }
   };
 
 // genresCall function get all generas for tv and movie and set it's id as key for generas
@@ -61,11 +102,14 @@ function App() {
 
     dispatch(getGenres(allGenres));
   };
+  if(showError){
+    return(
+    <ErrorPage/>
+)  }
 
   return (
     <BrowserRouter>
-      {/* {!url.backdrop ? ( */}
-        <>
+     
           <Header />
 
           <section className="main">
@@ -78,10 +122,8 @@ function App() {
             </Routes>
           </section>
           <Footer />
-        </>
-       {/* ) : (
-        <Loading />
-      )} */}
+        
+      
     </BrowserRouter>
   );
 }

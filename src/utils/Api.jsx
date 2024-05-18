@@ -1,6 +1,7 @@
 
 import axios from "axios";
-
+// import { useDispatch } from "react-redux";
+// import{setError} from "../Redux/slices/Slice"
 
 const BASE_URL = "https://api.themoviedb.org/3";
 
@@ -22,6 +23,7 @@ export const fetchDataFromApi = async (url, params) => {
     } catch (err) {
    
         return err;
+        
     }
 };
 

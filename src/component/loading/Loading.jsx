@@ -4,18 +4,12 @@ import './style.scss'
 
 export default function Loading() {
   return (
-    <div className='loading-scaleton'>
-        <div className="header">
-        <ContentWrapper>
-          <div className="img">
-            <div className="imgitem"></div>
+    <div className="loading-page">
 
-          </div>
-          <div className="text"></div>
-          </ContentWrapper>
-
-        </div>
+    <div className='loading'>
+        
       
+    </div>
     </div>
   )
 }

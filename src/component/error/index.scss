@@ -1,0 +1,22 @@
+.error {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #000000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-size: 36px;
+    color: #f23535;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 24px;
+    color: #c1c1c1;
+    margin-top: 0;
+}
+

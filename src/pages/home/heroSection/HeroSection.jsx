@@ -11,8 +11,11 @@ export default function HeroSection() {
   const [bg, setbg] = React.useState(null);
   const [query, setQuery] = React.useState("");
 
-  const { data, loading } = useFetch(`/movie/upcoming`);
+  const { data, loading ,error} = useFetch(`/movie/upcoming`);
+  
+  
   useEffect(() => {
+    
     let randomNumber = Math.floor(Math.random() * (20 + 1));
     const imgSrc = data?.results?.[randomNumber]?.backdrop_path;
     setbg(imgSrc ? `${baseImgUrl}${imgSrc}` : false);
@@ -38,6 +41,7 @@ export default function HeroSection() {
           <div className="hero-img-container">
             <img
               src={bg || panda}
+              onError={(e) => (e.target.src = panda)}
               loading="lazy"
               sizes="100vw"
               alt=""

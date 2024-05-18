@@ -31,7 +31,7 @@ export default function Search() {
       }
     );
   };
-  console.log("loading", loading);
+ 
   const fetchNextPageData = () => {
     fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
       (res) => {
@@ -74,7 +74,7 @@ export default function Search() {
                       ? url.poster + item.poster_path
                       : PosterFallback;
 
-                    return <Card item={item} posterUrl={posterUrl} />;
+                    return <Card key={index} item={item} posterUrl={posterUrl} />;
                   })}
               </InfiniteScroll>
               {pageNum <= data?.total_pages && <Spinner />}

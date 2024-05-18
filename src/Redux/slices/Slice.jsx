@@ -7,7 +7,7 @@ import {
 const pages = createSlice({
   name: "count",
   initialState: { url: {}
-  , genres: {}
+  , genres: {},error:false
  },
   reducers: {
     setUrl: (state, action) => {
@@ -17,7 +17,10 @@ const pages = createSlice({
       
       state.genres = action.payload;
     },
+    setError:(state,action)=>{
+      state.error = action.payload
 
+    },
    
   },
  
@@ -26,7 +29,7 @@ const pages = createSlice({
 export default pages.reducer;
 
 // for dispatch
-export const { setUrl,getGenres } = pages.actions;
+export const { setUrl,getGenres ,setError} = pages.actions;
 
 // for export specific data from store
 export let sele = createSelector(
